@@ -23,5 +23,11 @@ static const String skip="Skip";
   static const String password="Password";
   static const String forgetpassword="Forget Password?";
   static const String email="Email";
+  static const String subtitlesignin="Please enter your email and password Or See More Social Media Options";
+  static const String subtitlesignup="Please enter your email and password and confirm your password";
+  static const String username="username";
+  static const String resetPassword="Reset Password";
+  static const String rest="Rest";
+
 
 }

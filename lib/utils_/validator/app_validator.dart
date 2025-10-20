@@ -2,7 +2,7 @@ class AppValidator {
   static String? validate({
     required String input,
     required ValidationType type,
-    String? otherValue, // هنا بنستقبل القيمة اللي نقارن بيها
+    String? otherValue,
   }) {
     if (input.trim().isEmpty) {
       return "This field is required";

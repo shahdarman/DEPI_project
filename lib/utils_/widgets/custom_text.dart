@@ -19,7 +19,7 @@ class AppText extends StatelessWidget {
               text: text,
               style: TextStyle(
                 fontSize: 16,
-                color: AppColor.textColor, //cyan
+                color: AppColor.textColor,
               ),
               children: [
                 TextSpan(

@@ -1,9 +1,11 @@
 import 'package:collaboration_list/onboarding/widgets/continue_buttons.dart';
 import 'package:collaboration_list/onboarding/widgets/onboarding_tittle_and_subtittle.dart';
+import 'package:collaboration_list/screens/login/screens/login_screen.dart';
 import 'package:collaboration_list/utils_/app_color.dart';
 import 'package:flutter/material.dart';
 
 import '../utils_/app_strings.dart';
+import '../utils_/navigation/navigation.dart';
 
 List<String> onboardingImage = [
   "assets/images/onboarding01.png",
@@ -40,25 +42,24 @@ class _OnboardingState extends State<Onboarding> {
         controller: pageController,
         itemCount: onboardingImage.length,
         itemBuilder: (context, index) {
-
-            return _buildImageBackgroundScreen(context, index);
-
+          return _buildImageBackgroundScreen(context, index);
         },
       ),
     );
   }
+
   Widget _buildImageBackgroundScreen(BuildContext context, int index) {
     return Stack(
       fit: StackFit.expand,
       children: [
-        Image.asset(
-          onboardingImage[index],
-          fit: BoxFit.cover,
-        ),
+        Image.asset(onboardingImage[index], fit: BoxFit.cover),
         Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.black.withOpacity(0.0), Colors.black.withOpacity(0.6)],
+              colors: [
+                Colors.black.withOpacity(0.0),
+                Colors.black.withOpacity(0.6),
+              ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               stops: const [0.5, 1.0],
@@ -72,19 +73,33 @@ class _OnboardingState extends State<Onboarding> {
                 alignment: Alignment.topRight,
                 child: Padding(
                   padding: const EdgeInsets.all(6.0),
-                  child: ElevatedButton(onPressed: (){},
-                      style: ElevatedButton.styleFrom(
-                          shadowColor: Colors.white,
-                          backgroundColor: AppColor.maincolor.withOpacity(0.6),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50),
-                          ),),
-                      child: Text(AppStrings.skip , style: TextStyle(color: AppColor.textColor , fontWeight: FontWeight.bold),))
+                  child: ElevatedButton(
+                    onPressed: () {
+                      PushNavigation().navigation(context: context, screen: LoginScreen());
+                    },
+                    style: ElevatedButton.styleFrom(
+                      shadowColor: Colors.white,
+                      backgroundColor: AppColor.maincolor.withOpacity(0.6),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                    ),
+                    child: Text(
+                      AppStrings.skip,
+                      style: TextStyle(
+                        color: AppColor.textColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ),
               ),
               const Spacer(),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 32.0),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24.0,
+                  vertical: 32.0,
+                ),
                 decoration: BoxDecoration(
                   color: AppColor.maincolor.withOpacity(0.9),
                   borderRadius: const BorderRadius.only(
@@ -97,7 +112,7 @@ class _OnboardingState extends State<Onboarding> {
                   children: [
                     OnboardingTittleAndSubTittle(
                       subTittle: AppStrings.onboardingSubTittles[index],
-                      tittle: AppStrings.onboardingTittles[index], 
+                      tittle: AppStrings.onboardingTittles[index],
                     ),
                     const SizedBox(height: 24),
                     ContinueButtons(
@@ -114,6 +129,4 @@ class _OnboardingState extends State<Onboarding> {
       ],
     );
   }
-
 }
-
