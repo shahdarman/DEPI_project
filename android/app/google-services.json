@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "952246946237",
+    "project_id": "depi-final-project-df68a",
+    "storage_bucket": "depi-final-project-df68a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:952246946237:android:8a380aac50d338d4de6ad4",
+        "android_client_info": {
+          "package_name": "com.collaboration.collaboration_list"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuTpMZLq-aFk6YZkxRRLYchQ2gQIXO9rA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
