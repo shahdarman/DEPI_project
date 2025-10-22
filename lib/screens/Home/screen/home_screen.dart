@@ -93,10 +93,26 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        '🏠 Home Screen',
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+    return Scaffold(
+      appBar: AppBar(
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0), // Add padding for spacing
+          child: CircleAvatar(
+            backgroundColor: AppColor.maincolor,
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.person, color: Colors.white),
+            ),
+          ),
+        ),
+        title: Text("Username"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.notifications_none, size: 35),
+          ),
+        ],
+        toolbarHeight: 44,
       ),
     );
   }
