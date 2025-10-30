@@ -12,9 +12,9 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: [
-          const BackgroundImage(),
-          LoginForm(),
+        children:[
+        const BackgroundImage(),
+        LoginForm(),
 
         ],
       ),
